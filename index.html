@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burak's Personel Site</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"/>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Playfair Display", serif;
+      }
+
+      body {
+        background: #050b16;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        min-height: 1250px;
+        background: #fff;
+        margin: 50px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        box-shadow: 0px 0px 30px 5px rgba(0,204,194,0.75);
+        -webkit-box-shadow: 0px 0px 30px 5px rgba(0,204,194,0.75);
+        -moz-box-shadow: 0px 0px 30px 5px rgba(0,204,194,0.75);
+      }
+
+      .Leftside {
+        position: relative;
+        background-image: linear-gradient(rgb(42, 37, 68), rgb(19, 18, 104));
+        padding: 40px;
+        color: #dbdbdb;
+      }
+
+      .profileText {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .imgBox {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .imgBox img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contacInfo {
+        padding-top: 40px;
+      }
+
+      .title {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+
+      .contacInfo ul {
+        position: relative;
+      }
+
+      .contacInfo ul li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .contacInfo ul li .icon {
+        display: inline-block;
+        width: 20px;
+        font-size: 20px;
+        color: #6fd1ff;
+      }
+
+      .contacInfo ul li span {
+        color: #fff;
+        font-weight: 300;
+      }
+
+      .personalInformation ul {
+        position: relative;
+      }
+
+      .personalInformation ul li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .personalInformation ul li .icon {
+        display: inline-block;
+        width: 20px;
+        font-size: 20px;
+        color: #6fd1ff;
+      }
+
+      .personalInformation ul li span {
+        color: #fff;
+        font-weight: 300;
+      }
+
+      .language ul {
+        position: relative;
+      }
+
+      .language ul li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .language ul li .icon {
+        display: inline-block;
+        width: 20px;
+        font-size: 20px;
+        color: #6fd1ff;
+      }
+
+      .language ul li span {
+        color: #fff;
+        font-weight: 300;
+      }
+
+      .language .percent {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: rgb(22, 22, 22);
+        display: block;
+        margin-top: 5px;
+      }
+
+      .language .percent div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #6fd1ff;
+      }
+
+      /* Rightside */
+
+      .Rightside {
+        position: relative;
+        background-image: linear-gradient(#313131, rgb(19, 19, 19));
+        padding: 40px;
+      }
+
+      .about {
+        margin-bottom: 50px;
+      }
+
+      .about:last-child {
+        margin-bottom: 0;
+      }
+
+      .title2 {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #fff;
+      }
+
+      .about ul {
+        position: relative;
+      }
+
+      .about ul li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .about ul li .icon {
+        display: inline-block;
+        width: 20px;
+        font-size: 20px;
+        color: #fff;
+      }
+
+      .about ul li span {
+        color: #fff;
+        font-weight: 300;
+      }
+
+      .Skiils h3 {
+        color: #fff;
+        font-size: 1.5rem;
+      }
+
+      .Skiils ul {
+        position: relative;
+      }
+
+      .Skiils ul li {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .Skiils ul li .icon {
+        display: inline-block;
+        width: 20px;
+        font-size: 20px;
+        color: #fff;
+      }
+
+      .Skiils ul li span {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .Skiils .percent {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: rgb(0, 0, 0);
+        display: block;
+        margin-top: 5px;
+      }
+
+      .Skiils .percent div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #6fd1ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="Leftside">
+        <div class="progileText">
+          <div class="imgBox">
+            <img src="Avatar/Burak.png" alt="#"/>
+          </div>
+          <h1>Burak Beken</h1>
+        </div>
+
+        <div class="contacInfo">
+          <h3 class="title">Contact</h3>
+          <hr />
+          <br />
+          <ul>
+            <li>
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">Nuripaşa mah. 55/3 sok. No:22 Daire:14</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text">0(545)836 08 08</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text">bekenburak@windowslive.com</span>
+            </li>
+            <br />
+            <hr />
+          </ul>
+        </div>
+        <br />
+        <div class="personalInformation">
+          <h3 class="title">Personal Information</h3>
+          <ul>
+            <li>
+              <span class="icon"
+                ><i class="fa-sharp fa-solid fa-earth-americas"></i></span>
+              <span class="text">Turkey - İstanbul</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-cake-candles"></i></span>
+              <span class="text">22/07/1998</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-person"></i></span>
+              <span class="text">Single</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-car"></i></span>
+              <span class="text">B2</span>
+            </li>
+            <br />
+            <hr />
+          </ul>
+          <br />
+        </div>
+        <div class="language">
+          <h3 class="title">Languages</h3>
+          <ul>
+            <li>
+              <span class="icon"><i class="fa-solid fa-globe"></i></span>
+              <span class="text">Turkish</span>
+              <span class="percent">
+                <div style="width: 100%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-globe"></i></span>
+              <span class="text">English</span>
+              <span class="percent">
+                <div style="width: 65%"></div>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="Rightside">
+        <div class="about">
+          <h2 class="title2">ABOUT ME</h2>
+          <hr />
+          <br />
+          <p>
+            In the field of control and automation technologies, I have
+            approximately 1.5 years of work experience. During high school, I
+            developed a quadcopter (drone) and successfully controlled it for a
+            final project presentation using my own resources. In high school, I
+            participated in a competition organized by the "festo" company and,
+            with the help of sensors, my team and I were able to create a robot
+            that could follow a line, approach a wall, find a ball, and score a
+            goal, winning first place that day. To further improve my skills, I
+            started working on 3D modelling and software development. I continue
+            to develop myself in 3D modelling and aspire to become a game
+            designer in the future. I have been working on 3D programs for
+            approximately 6 years. Additionally, to enhance my software skills,
+            I have been taking courses since December 2022 to become a
+            full-stack web developer, and I have completed a few small freelance
+            projects.
+          </p>
+        </div>
+        <div class="about">
+          <h2 class="title2">work experience</h2>
+          <hr />
+          <ul>
+            <li>
+              <span class="icon"><i class="fa-solid fa-1"></i></span>
+              <span class="text"
+                >09/2022 - 02/2023 : Oppo Türkiye - Customer service</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-2"></i></span>
+              <span class="text"
+                >07/2021 - 01/2022 : Pixel studio - Machine installation and
+                sales consultancy</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-3"></i></span>
+              <span class="text"
+                >07/2019 - 09/2019 : İstanbul Airport - Stajyer</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-4"></i></span>
+              <span class="text"
+                >03/2019 - 06/2019 : Defacto - Sales Consulting</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-5"></i></span>
+              <span class="text"
+                >07/2007 - 06/2007 : Metro İstanbul A.Ş. - intern</span>
+            </li>
+          </ul>
+        </div>
+        <div class="about">
+          <h2 class="title2">education</h2>
+          <hr />
+          <ul>
+            <li>
+              <span class="icon"><i class="fa-solid fa-1"></i></span>
+              <span class="text"
+                >2016 - 2018 : Control and Automation Technologies - Istanbul
+                University</span>
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-2"></i></span>
+              <span class="text"
+                >2012 - 2016 : Control and Automation Technologies - Zeytinburnu
+                Industrial Vocational School</span>
+            </li>
+          </ul>
+        </div>
+        <div class="Skiils">
+          <h3 class="title">Skills</h3>
+          <hr />
+          <ul>
+            <li>
+              <span class="text">Cinema4D</span>
+              <span class="percent">
+                <div style="width: 90%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">Photoshop</span>
+              <span class="percent">
+                <div style="width: 50%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">Solidworks</span>
+              <span class="percent">
+                <div style="width: 55%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">Blender</span>
+              <span class="percent">
+                <div style="width: 65%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">Html, CSS, JS</span>
+              <span class="percent">
+                <div style="width: 60%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">Git</span>
+              <span class="percent">
+                <div style="width: 45%"></div>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
